@@ -179,7 +179,7 @@ def semi_major_axis(T_days, M_star_Msun):
     
     return a_AU
 
-# Example: Calculate for KIC006922244 (Kepler-8 b)
+# Example: Calculate for KIC or TIC (Kepler-8 b)
 T_days = 3.5225  # Orbital period in days
 M_star_Msun = 1.132  # Stellar mass in solar masses
 
@@ -190,7 +190,7 @@ print(f"Semi-major axis: {a:.5f} AU")
 import numpy as np
 
 # Constants (example values)
-R_star = 1.489 * 6.955e8  # Stellar radius in meters (for KIC006922244)
+R_star = 1.132 * 6.955e8  # Stellar radius in meters (for KIC006922244)
 P_orb = 3.5225 * 24 * 3600  # Orbital period in seconds (for KIC006922244)
 a = semi_major_axis(3.5225, 1.132) * 1.496e11  # Semi-major axis in meters
 T_dur = 0.1 * P_orb  # Transit duration in seconds (estimate)
