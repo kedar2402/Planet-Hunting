@@ -1,6 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+from astropy import units as u
+"""
+
+# ML algos
 (import os 
 import math
 import pandas as pd
@@ -34,9 +38,9 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier)
+#
 
-
-
+"""
 z, t, flux = np.loadtxt("Data/TIC-KIC.dat",unpack=True,skiprows=)
 plt.figure(figsize=(4,3))
 plt.plot(t,flux,'k.',markersize=2)
@@ -190,9 +194,9 @@ print(f"Semi-major axis: {a:.5f} AU")
 import numpy as np
 
 # Constants (example values)
-R_star = 1.132 * 6.955e8  # Stellar radius in meters (for KIC006922244)
-P_orb = 3.5225 * 24 * 3600  # Orbital period in seconds (for KIC006922244)
-a = semi_major_axis(3.5225, 1.132) * 1.496e11  # Semi-major axis in meters
+R_star =  # Stellar radius in meters 
+P_orb =  # Orbital period in seconds
+a = semi_major_axis(T_days, M_star_Msun) * 1.496e11  # Semi-major axis in meters
 T_dur = 0.1 * P_orb  # Transit duration in seconds (estimate)
 
 # Function to calculate impact parameter b
@@ -232,9 +236,32 @@ plt.ylabel("Flux")
 plt.title("Light Curve")
 plt.show()
 
-# Estimate orbital period and other parameters as before
-# Compare with NASA's Exoplanet Archive data
 
+transit_depth = 1 - (least value of flux)
+R_star = 2.04354 * u.Rsun 
+r_pl_solar_radius = np.sqrt(transit_depth) * R_star
+r_pl_solar_radius
+
+r_pl_earth_radius = r_pl_solar_radius.to(u.R earth)
+r_pl_earth_radius
+
+
+def planet_radius(intransit_flux, stellar_radius):
+    
+        ''' 
+        intransit_flux: the flux at the midpoint of the transit event
+        stellar_radius: radius of the star in solar radii
+        '''
+        transit_depth = 1 - intransit_flux  CHANGE THIS for other targets.
+        R_star = stellar_radius* u.Rsun 
+        r_pl_solar_radius = np.sqrt(transit_depth) * R_star
+
+        r_pl_Earth = r_pl_solar_radius.to(u.Rearth).value
+        print ("Radius of the planet: {} Earth radii".format(round(r_pl_Earth, 2)))
+        
+    # Now use use funcion like this: 
+planet_radius(intransient flux, stellar radius)
+Radius of the planet: (x times) Earth radii
 
 
 
